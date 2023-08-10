@@ -138,7 +138,7 @@ section {
 
 .header .navbar .links a:hover {
   text-decoration: underline;
-  color: #ff9900;
+  color: #ff9500;
 }
 
 .header #menu-btn {
@@ -704,20 +704,24 @@ section {
   color: #ff8000;
 }
 
- .floating {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100;
- }
+.floating{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#000000;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
  
  .fab-icon {
   margin-top: 16px;
@@ -766,7 +770,7 @@ section {
     top: 99%;
     left: 0;
     right: 0;
-    background: #e9bc8b;
+    background: #fde6b9;
     border-top: 0.2rem solid #334;
     border-bottom: 0.2rem solid #334;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
