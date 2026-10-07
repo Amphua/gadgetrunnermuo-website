@@ -13,7 +13,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/interface.css">
 
 </head>
 <body>
@@ -22,11 +22,11 @@
 
 <header class="header">
 
-   <div class="contact-info">
+   <!-- <div class="contact-info">
       <p> <i class="fas fa-map"></i> Muar, Johore </p>
       <p> <i class="fas fa-envelope"></i> gadgetrunnermuo@gmail.com </p>
       <p> <i class="fas fa-phone"></i> +6011-32376197(Asyraf)/+6013-6313424(Azlan )/+6017-6857673(Solihin)</p>
-   </div>
+   </div> -->
 
    <nav class="navbar">
 
@@ -42,7 +42,12 @@
          <a href="#contact">Hubungi Kami</a>
       </div>
 
-      <div id="menu-btn" class="fa fa-bars"></div>
+      <div class="nav-actions">
+         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+         </button>
+         <button id="menu-btn" class="fas fa-bars" type="button" aria-label="Open navigation menu" aria-expanded="false"></button>
+      </div>
 
    </nav>
 
@@ -55,13 +60,22 @@
 <section class="home" id="home">
 
    <div class="image">
-      <img src="images/logo.jpg" alt="" >
+      <img src="images/workshop.jpg" alt="Technician's workbench for phone and laptop repairs">
+      <span class="photo-note"><i class="fas fa-microchip" aria-hidden="true"></i> Baiki dengan teliti, setiap hari</span>
    </div>
 
    <div class="content">
-      <h3>Phone/laptop anda ada masalah ? Tak perlu pening! Kami kan ada!</h3>
-      <p>Kami menyediakan perkhidmatan repair phone/laptop/PC. Selain itu, kami juga menyediakan perkhidmatan servis printer!</p>
-      <a href="#about" class="btn">Jom Kenal Bersama Kami !</a>
+      <p class="eyebrow"><span></span> Pusat servis gajet · Muar, Johor</p>
+      <h1>Gajet rosak?<br><span>Kami baiki.</span></h1>
+      <p>Kami membaiki telefon, laptop, PC dan printer dengan servis yang teliti, harga berpatutan, serta pilihan runner untuk kemudahan anda.</p>
+      <div class="hero-actions">
+         <a href="https://wa.link/uylr6u" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Tanya melalui WhatsApp</a>
+         <a href="#services" class="text-link">Lihat servis <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="hero-proof">
+         <span><i class="fas fa-check-circle" aria-hidden="true"></i> Waranti tersedia</span>
+         <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 2 cawangan</span>
+      </div>
    </div>
   
 
@@ -137,12 +151,6 @@
          <p>Kami juga menyediakan servis membaik pulih printer !</p>
       </div>
 
-       <div class="box">
-         <img src="images/printer.png" alt="">
-         <h3>Basic Printer repair</h3>
-         <p>Kami juga menyediakan servis membaik pulih printer !</p>
-      </div>
- 
    </div>
 
 </section>
@@ -433,12 +441,14 @@
    <h1 class="heading"> <span>Lokasi</span> Kami </h1>
    
    <div class="row">
-      <h1>Lokasi Di Jalan Othman:</h1>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.4352568611257!2d102.56331188802969!3d2.042447647866439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1b8409b6e6d75%3A0xa9d55ec23c4e0e45!2sGADGET%20RUNNER%20MUAR%20-%20PHONE%2C%20LAPTOP%20%26%20PC%20REPAIR%20SERVICES!5e0!3m2!1sen!2smy!4v1690486697871!5m2!1sen!2smy" height="350"  style="border:0px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  
-      <h1>Lokasi Di Parit Jawa: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.480529295928!2d102.63881441475486!3d1.9614855985700086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1b196dc8f6043%3A0x87b9be94574971e0!2sGadget%20Runner%20Muar%20Repair%20Services%20Caw.%20Parit%20Jawa!5e0!3m2!1sen!2smy!4v1690486625136!5m2!1sen!2smy" height="350"  style="border: 0px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
-     
+      <div class="location">
+         <h2>Lokasi Di Jalan Othman</h2>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.4352568611257!2d102.56331188802969!3d2.042447647866439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1b8409b6e6d75%3A0xa9d55ec23c4e0e45!2sGADGET%20RUNNER%20MUAR%20-%20PHONE%2C%20LAPTOP%20%26%20PC%20REPAIR%20SERVICES!5e0!3m2!1sen!2smy!4v1690486697871!5m2!1sen!2smy" title="Gadget Runner Muar, Jalan Othman" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="location">
+         <h2>Lokasi Di Parit Jawa</h2>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.480529295928!2d102.63881441475486!3d1.9614855985700086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1b196dc8f6043%3A0x87b9be94574971e0!2sGadget%20Runner%20Muar%20Repair%20Services%20Caw.%20Parit%20Jawa!5e0!3m2!1sen!2smy!4v1690486625136!5m2!1sen!2smy" title="Gadget Runner Muar, Parit Jawa" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
    </div>
       
    
