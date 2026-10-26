@@ -143,7 +143,7 @@ section { padding: 8rem max(6vw, calc((100vw - 1240px) / 2)); scroll-margin-top:
 .gallery-heading .eyebrow { margin: 0 0 1rem; }
 .gallery-heading .heading { margin: 0; font-size: clamp(3rem, 4vw, 4.5rem); text-align: left; }
 .gallery-intro { max-width: 35rem; margin: 0 0 .3rem; color: var(--muted); font-size: 1.45rem; line-height: 1.7; }
-.gallery-carousel { max-width: 112rem; margin: 0 auto; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: var(--shadow); }
+.gallery-carousel { width: 100%; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: var(--shadow); }
 .gallery-stage { position: relative; isolation: isolate; overflow: hidden; aspect-ratio: 16 / 8.4; min-height: 34rem; background: #171412; color: #fff; }
 .gallery-main-image, .gallery-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
 .gallery-main-image { object-fit: cover; transition: opacity .2s, transform .6s; }
