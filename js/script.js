@@ -3,44 +3,81 @@ const navbarLinks = document.querySelector('.header .navbar .links');
 const themeToggle = document.querySelector('#theme-toggle');
 const root = document.documentElement;
 
+const getStoredTheme = () => {
+   try {
+      return localStorage.getItem('gadget-runner-theme') || 'light';
+   } catch (error) {
+      return 'light';
+   }
+};
+
+const persistTheme = (theme) => {
+   try {
+      localStorage.setItem('gadget-runner-theme', theme);
+   } catch (error) {
+      // Ignore storage failures in restricted browser contexts.
+   }
+};
+
 const setTheme = (theme) => {
-   root.dataset.theme = theme;
-   const isDark = theme === 'dark';
+   if (!root || !themeToggle) return;
+
+   const safeTheme = theme === 'dark' ? 'dark' : 'light';
+   const isDark = safeTheme === 'dark';
+
+   root.dataset.theme = safeTheme;
    themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
    themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+   themeToggle.setAttribute('aria-pressed', String(isDark));
    themeToggle.title = `Switch to ${isDark ? 'light' : 'dark'} mode`;
 };
 
-setTheme(localStorage.getItem('gadget-runner-theme') || 'light');
+setTheme(getStoredTheme());
 
-themeToggle.addEventListener('click', () => {
+themeToggle?.addEventListener('click', () => {
    const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-   localStorage.setItem('gadget-runner-theme', nextTheme);
+   persistTheme(nextTheme);
    setTheme(nextTheme);
 });
 
-menu.addEventListener('click', () => {
-   const isOpen = navbarLinks.classList.toggle('active');
-   menu.classList.toggle('fa-times', isOpen);
-   menu.classList.toggle('fa-bars', !isOpen);
-   menu.setAttribute('aria-expanded', String(isOpen));
-   menu.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-});
-
-navbarLinks.querySelectorAll('a').forEach((link) => {
-   link.addEventListener('click', () => {
-      navbarLinks.classList.remove('active');
-      menu.classList.remove('fa-times');
-      menu.classList.add('fa-bars');
-      menu.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-label', 'Open navigation menu');
+if (menu && navbarLinks) {
+   menu.addEventListener('click', () => {
+      const isOpen = navbarLinks.classList.toggle('active');
+      menu.classList.toggle('fa-times', isOpen);
+      menu.classList.toggle('fa-bars', !isOpen);
+      menu.setAttribute('aria-expanded', String(isOpen));
+      menu.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
    });
-});
+
+   navbarLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+         navbarLinks.classList.remove('active');
+         menu.classList.remove('fa-times');
+         menu.classList.add('fa-bars');
+         menu.setAttribute('aria-expanded', 'false');
+         menu.setAttribute('aria-label', 'Open navigation menu');
+      });
+   });
+}
+
+const header = document.querySelector('.header');
+const headerNavbar = document.querySelector('.header .navbar');
+const motionSections = [...document.querySelectorAll('section')];
+
+if (motionSections.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+   const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+         target.classList.toggle('section-entering', isIntersecting);
+      });
+   }, { rootMargin: '-15% 0px -15% 0px', threshold: 0.01 });
+
+   motionSections.forEach((section) => sectionObserver.observe(section));
+}
 
 window.addEventListener('scroll', () => {
    const isScrolled = window.scrollY > 60;
-   document.querySelector('.header').classList.toggle('scrolled', isScrolled);
-   document.querySelector('.header .navbar').classList.toggle('active', isScrolled);
+   if (header) header.classList.toggle('scrolled', isScrolled);
+   if (headerNavbar) headerNavbar.classList.toggle('active', isScrolled);
 });
 
 const gallery = document.querySelector('[data-gallery]');

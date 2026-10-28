@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800" fill="none">
+  <defs>
+    <radialGradient id="vignette">
+      <stop offset="0" stop-color="#ff8738" stop-opacity=".02"/>
+      <stop offset=".45" stop-color="#ff8738" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#ff8738" stop-opacity=".12"/>
+    </radialGradient>
+    <filter id="ray-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g stroke="#ff8738" stroke-linecap="round">
+    <path d="M720 400 0 95M720 400 70 180M720 400 0 280M720 400 0 510M720 400 100 700M720 400 270 800M720 400 490 800M720 400 940 800M720 400 1170 800M720 400 1440 690M720 400 1440 500M720 400 1440 280M720 400 1320 90M720 400 1060 0M720 400 830 0M720 400 470 0M720 400 210 0" stroke-width="1.2" opacity=".48"/>
+    <path d="M720 400 0 160M720 400 0 390M720 400 200 800M720 400 610 800M720 400 1080 800M720 400 1440 610M720 400 1440 360M720 400 1440 120M720 400 1230 0M720 400 970 0M720 400 350 0" stroke-width="2" opacity=".68"/>
+    <path d="M720 400 0 225M720 400 80 620M720 400 350 800M720 400 820 800M720 400 1360 800M720 400 1440 430M720 400 1370 170M720 400 1130 0M720 400 710 0M720 400 0 450" stroke-width="3" opacity=".74" filter="url(#ray-glow)"/>
+  </g>
+  <g fill="#ffd29d" opacity=".9">
+    <circle cx="210" cy="0" r="2.5"/><circle cx="350" cy="0" r="2"/><circle cx="470" cy="0" r="3"/>
+    <circle cx="0" cy="280" r="2.4"/><circle cx="0" cy="510" r="2.4"/><circle cx="70" cy="180" r="2.4"/>
+    <circle cx="350" cy="800" r="2.5"/><circle cx="610" cy="800" r="2"/><circle cx="940" cy="800" r="3"/>
+    <circle cx="1440" cy="280" r="2.4"/><circle cx="1440" cy="500" r="2.4"/><circle cx="1320" cy="90" r="2.4"/>
+  </g>
+  <rect width="1440" height="800" fill="url(#vignette)"/>
+</svg>
