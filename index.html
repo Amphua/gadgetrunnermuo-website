@@ -41,7 +41,7 @@
       </div>
 
       <div class="nav-actions">
-         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
             <i class="fas fa-moon" aria-hidden="true"></i>
          </button>
          <button id="menu-btn" class="fas fa-bars" type="button" aria-label="Open navigation menu" aria-expanded="false"></button>
@@ -79,12 +79,6 @@
 
 
 </section>
-<center>
- <div class="">
-      
-   </div>
-   
-</center>
 <!-- home section ends -->
 
 <!-- about section starts  -->
@@ -125,11 +119,6 @@
       <div class="about-image-badge"><i class="fas fa-check-circle" aria-hidden="true"></i> Pilihan pelanggan</div>
    </div>
 </section>
-<center>
-<div class="">
-
-</div>
-</center>
 <!-- about section ends -->
 
 <!-- services section starts  -->
@@ -205,7 +194,7 @@
    </div>
 
    <div class="gallery-carousel" data-gallery role="region" aria-label="Galeri foto kedai dan ruang kerja" aria-roledescription="slideshow">
-      <div class="gallery-stage">
+      <div class="gallery-stage" tabindex="0" aria-label="Galeri foto kedai dan ruang kerja">
          <img class="gallery-main-image" src="images/store-workshop.jpg" alt="Ruang kerja pembaikan di Gadget Runner MUO" fetchpriority="high">
          <div class="gallery-shade"></div>
          <div class="gallery-caption" aria-live="polite">
@@ -378,12 +367,18 @@
 
 <section class="reviews" id="reviews">
 
-   <h1 class="heading">  <span>Reviews</span> </h1>
+   <div class="reviews-heading">
+      <div>
+         <p class="eyebrow"><span></span> Kata pelanggan</p>
+         <h1 class="heading">Pengalaman <span>sebenar.</span></h1>
+      </div>
+      <p class="reviews-intro">Lihat apa yang pelanggan kami katakan tentang servis dan layanan di Gadget Runner MUO.</p>
+   </div>
 
    <div class="box-container">
 
-      <div class="box">
-         <div class="star">
+      <article class="box review-card">
+         <div class="star" role="img" aria-label="5 daripada 5 bintang">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -391,17 +386,17 @@
             <i class="fas fa-star"></i>
          </div>
          <div class="text">
-            <i class="fas fa-quote-right"></i>
+            <i class="fas fa-quote-right" aria-hidden="true"></i>
             <p>The best place to fix your phone and laptop. Price quite affordable than others</p>
          </div>
          <div class="user">
             <img src="images/profile.png" alt="">
             <h3>Sha al-Fawaz</h3>
          </div>
-      </div>
+      </article>
 
-      <div class="box">
-         <div class="star">
+      <article class="box review-card">
+         <div class="star" role="img" aria-label="5 daripada 5 bintang">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -409,7 +404,7 @@
             <i class="fas fa-star"></i>
          </div>
          <div class="text">
-            <i class="fas fa-quote-right"></i>
+            <i class="fas fa-quote-right" aria-hidden="true"></i>
             <p>Just changed the iphone lcd here
                Reasonable service price
                Good staff not arrogant
@@ -419,10 +414,10 @@
             <img src="images/profile2.png" alt="" width="100">
             <h3>Muzhaffar Jasman</h3>
          </div>
-      </div>
+      </article>
 
-      <div class="box">
-         <div class="star">
+      <article class="box review-card">
+         <div class="star" role="img" aria-label="5 daripada 5 bintang">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -430,17 +425,17 @@
             <i class="fas fa-star"></i>
          </div>
          <div class="text">
-            <i class="fas fa-quote-right"></i>
+            <i class="fas fa-quote-right" aria-hidden="true"></i>
             <p>Send iPhone repairs to this shop. Alhamdulillah the phone can turn on. Diorg only charges for the cleaning service</p>
          </div>
          <div class="user">
             <img src="images/profile3.png" alt="">
             <h3>Rohizan Ismail</h3>
          </div>
-      </div>
+      </article>
 
-      <div class="box">
-         <div class="star">
+      <article class="box review-card">
+         <div class="star" role="img" aria-label="5 daripada 5 bintang">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -448,17 +443,17 @@
             <i class="fas fa-star"></i>
          </div>
          <div class="text">
-            <i class="fas fa-quote-right"></i>
+            <i class="fas fa-quote-right" aria-hidden="true"></i>
             <p>Best place for phone repair. Honest and genuine service.</p>
          </div>
          <div class="user">
             <img src="images/profile4.png" alt="" width="100">
             <h3>Chi Jia Qing</h3>
          </div>
-      </div>
+      </article>
 
-      <div class="box">
-         <div class="star">
+      <article class="box review-card">
+         <div class="star" role="img" aria-label="5 daripada 5 bintang">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -466,17 +461,17 @@
             <i class="fas fa-star"></i>
          </div>
          <div class="text">
-            <i class="fas fa-quote-right"></i>
+            <i class="fas fa-quote-right" aria-hidden="true"></i>
             <p>Good servis with affordable price</p>
          </div>
          <div class="user">
             <img src="images/profile5.png" alt="" width="100">
             <h3>Norafifah Tarmizi96</h3>
          </div>
-      </div>
+      </article>
 
-      <div class="box">
-         <div class="star">
+      <article class="box review-card">
+         <div class="star" role="img" aria-label="4 daripada 5 bintang">
             
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -484,14 +479,14 @@
             <i class="fas fa-star"></i>
          </div>
          <div class="text">
-            <i class="fas fa-quote-right"></i>
+            <i class="fas fa-quote-right" aria-hidden="true"></i>
             <p>Good hospitality and good services to get your phone repaired.</p>
          </div>
          <div class="user">
             <img src="images/profile6.png" alt="" width="100">
             <h3>Amani Sanchez</h3>
          </div>
-      </div>
+      </article>
 
    </div>
 
@@ -507,12 +502,18 @@
    
    <div class="row">
       <div class="location">
-         <h2>Lokasi Di Jalan Othman</h2>
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2819.4352568611257!2d102.56331188802969!3d2.042447647866439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1b8409b6e6d75%3A0xa9d55ec23c4e0e45!2sGADGET%20RUNNER%20MUAR%20-%20PHONE%2C%20LAPTOP%20%26%20PC%20REPAIR%20SERVICES!5e0!3m2!1sen!2smy!4v1690486697871!5m2!1sen!2smy" title="Gadget Runner Muar, Jalan Othman" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <h2>Lokasi di Jalan Othman</h2>
+         <a class="location-photo-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Gadget+Runner+Muar%2C+Jalan+Othman%2C+Muar%2C+Johor" target="_blank" rel="noopener noreferrer" aria-label="Buka navigasi ke Gadget Runner MUO, Jalan Othman">
+            <img src="images/location-jalan-othman.jpg" alt="Bahagian hadapan Gadget Runner MUO di Jalan Othman">
+            <span class="location-photo-action"><i class="fas fa-directions" aria-hidden="true"></i> Buka navigasi</span>
+         </a>
       </div>
       <div class="location">
-         <h2>Lokasi Di Parit Jawa</h2>
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.480529295928!2d102.63881441475486!3d1.9614855985700086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d1b196dc8f6043%3A0x87b9be94574971e0!2sGadget%20Runner%20Muar%20Repair%20Services%20Caw.%20Parit%20Jawa!5e0!3m2!1sen!2smy!4v1690486625136!5m2!1sen!2smy" title="Gadget Runner Muar, Parit Jawa" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <h2>Lokasi di Parit Kadzi</h2>
+         <a class="location-photo-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Gadget+Runner+MUO%2C+Parit+Kadzi%2C+Muar%2C+Johor" target="_blank" rel="noopener noreferrer" aria-label="Buka navigasi ke Gadget Runner MUO, Parit Kadzi">
+            <img src="images/location-parit-kadzi.jpg" alt="Bahagian hadapan Gadget Runner MUO di Parit Kadzi">
+            <span class="location-photo-action"><i class="fas fa-directions" aria-hidden="true"></i> Buka navigasi</span>
+         </a>
       </div>
    </div>
       
@@ -526,63 +527,58 @@
 
 <section class="footer">
 
-   <div class="box-container">
-
-      <div class="box">
-         <h3>Pautan</h3>
-         <a class="link" href="#home"> <i class="fas fa-angle-right"></i> Halaman</a>
-         <a class="link" href="#about"> <i class="fas fa-angle-right"></i> Pengenalan</a>
-         <a class="link" href="#services"> <i class="fas fa-angle-right"></i> Servis</a>
-         <a class="link" href="#gallery"> <i class="fas fa-angle-right"></i> Galeri</a>
-         <a class="link" href="#team"> <i class="fas fa-angle-right"></i> Team</a>
-         <a class="link" href="#reviews"> <i class="fas fa-angle-right"></i> Reviews</a>
-         <a class="link" href="#contact"> <i class="fas fa-angle-right"></i> Contact</a>
-      </div>
-
-      <div class="box">
-         <h3>waktu Operasi</h3>
-         <p> <span>monday :</span> 10:30am to 6.30pm </p>
-         <p> <span>tuesday :</span>  10:30am to 6.30pm </p>
-         <p> <span>wednesday :</span>  10:30am to 6.30pm  </p>
-         <p> <span>thursday :</span>  10:30am to 6.30pm  </p>
-         <p> <span>friday :</span>  10:30am to 6.30pm  </p>
-         <p> <span>saturday :</span> 10:30am to 6.30pm  </p>
-         <p> <span>sunday :</span> 12:00am to 6.00pm </p>
-      </div>
-
-      <div class="box">
-         <h3>Maklumat hubungan</h3>
-         <a href="#" class="link"> <i class="fas fa-phone"></i>  +6011-32376197(Asyraf) </a>
-         <a href="#" class="link"> <i class="fas fa-phone"></i> +6013-6313424(Azlan)</a>
-         <a href="#" class="link"> <i class="fas fa-phone"></i>+6017-6857673(Solihin)</a>
-         <a href="mailto: gadgetrunnermuo@gmail.com" class="link"> <i class="fas fa-envelope"></i> gadgetrunnermuo@gmail.com </a>
-         <a href="#" class="link"> <i class="fas fa-map"></i> Muar,Johore </a>
-      </div>
-
-      <div class="box">
-         <h3>media sosial</h3>
-         <center>
-         <div class="share">
-            <div></div><div><img src="images/socmed.png" alt="" width="100" height="100"></a></div>
-            <a href="https://www.facebook.com/GADGETRUNNERMUO/" class="fab fa-facebook-f"></a>
-            <a href="https://www.instagram.com/gadgetrunnermuar/" class="fab fa-instagram"></a>
-            <a href="https://www.tiktok.com/@gadgetrunnermuo" class="fab fa-tiktok"></a>
-            <a href="https://t.me/phonebajetmuar" class="fab fa-telegram"></a>
-            
+   <div class="footer-inner">
+      <div class="footer-cta">
+         <div>
+            <p class="eyebrow"><span></span> Gadget Runner MUO · Muar</p>
+            <h2>Gadget bermasalah?<br><span>Kami sedia membantu.</span></h2>
          </div>
-         </center>
+         <a href="https://wa.link/uylr6u" class="btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Hubungi kami</a>
       </div>
 
+      <div class="footer-details">
+         <nav class="footer-nav" aria-label="Pautan footer">
+            <h3>Pautan pantas</h3>
+            <a href="#services">Servis</a>
+            <a href="#gallery">Galeri</a>
+            <a href="#team">Pasukan</a>
+            <a href="#reviews">Ulasan</a>
+         </nav>
+
+         <div class="footer-contact">
+            <h3>Hubungi</h3>
+            <a href="tel:+601132376197"><i class="fas fa-phone" aria-hidden="true"></i> +6011-32376197</a>
+            <a href="mailto:gadgetrunnermuo@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> gadgetrunnermuo@gmail.com</a>
+            <a href="#contact"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 2 lokasi di Muar</a>
+         </div>
+
+         <div class="footer-hours">
+            <h3>Waktu operasi</h3>
+            <p><span>Isnin–Sabtu</span> 10:30 pagi–6:30 petang</p>
+            <p><span>Ahad</span> 12:00 pagi–6:00 petang</p>
+         </div>
+
+         <div class="footer-social">
+            <h3>Ikuti kami</h3>
+            <div class="share">
+               <a href="https://www.facebook.com/GADGETRUNNERMUO/" class="fab fa-facebook-f" target="_blank" rel="noopener noreferrer" aria-label="Facebook Gadget Runner MUO"></a>
+               <a href="https://www.instagram.com/gadgetrunnermuar/" class="fab fa-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram Gadget Runner MUO"></a>
+               <a href="https://www.tiktok.com/@gadgetrunnermuo" class="fab fa-tiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok Gadget Runner MUO"></a>
+               <a href="https://t.me/phonebajetmuar" class="fab fa-telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram Gadget Runner MUO"></a>
+            </div>
+         </div>
+      </div>
    </div>
 
-   <div class="credit"> created by <span>am</span> | 2023 </div>
-
-   
+   <div class="footer-bottom">
+      <span>© 2026 am</span>
+      <a href="#home">Kembali ke atas <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+   </div>
 </section>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-   <a href="https://wa.link/uylr6u" class="floating" target="_blank">
-   <i class="fa fa-whatsapp my-float"></i>
-   </a>
+<a href="https://wa.link/uylr6u" class="floating" target="_blank" rel="noopener noreferrer" aria-label="Hubungi kami melalui WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  <span>Chat dengan kami</span>
+</a>
 <!-- footer section ends -->
 
 
