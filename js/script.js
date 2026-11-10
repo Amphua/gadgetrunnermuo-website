@@ -1,7 +1,10 @@
 const menu = document.querySelector('#menu-btn');
 const navbarLinks = document.querySelector('.header .navbar .links');
 const themeToggle = document.querySelector('#theme-toggle');
+const floatingWhatsApp = document.querySelector('.floating');
 const root = document.documentElement;
+const logoMark = document.querySelector('.logo-mark');
+const favicon = document.querySelector('link[rel="icon"]');
 
 const getStoredTheme = () => {
    try {
@@ -20,16 +23,20 @@ const persistTheme = (theme) => {
 };
 
 const setTheme = (theme) => {
-   if (!root || !themeToggle) return;
+   if (!root) return;
 
    const safeTheme = theme === 'dark' ? 'dark' : 'light';
    const isDark = safeTheme === 'dark';
 
    root.dataset.theme = safeTheme;
-   themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
-   themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
-   themeToggle.setAttribute('aria-pressed', String(isDark));
-   themeToggle.title = `Switch to ${isDark ? 'light' : 'dark'} mode`;
+   if (themeToggle) {
+      themeToggle.innerHTML = `<i class="fas fa-${isDark ? 'sun' : 'moon'}" aria-hidden="true"></i>`;
+      themeToggle.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} mode`);
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.title = `Switch to ${isDark ? 'light' : 'dark'} mode`;
+   }
+   if (logoMark) logoMark.src = `images/gadget-runner-logo${isDark ? '-dark' : ''}.png?v=2`;
+   if (favicon) favicon.href = `images/gadget-runner-favicon-${safeTheme}.png?v=5`;
 };
 
 setTheme(getStoredTheme());
@@ -58,6 +65,52 @@ if (menu && navbarLinks) {
          menu.setAttribute('aria-label', 'Open navigation menu');
       });
    });
+}
+
+if (floatingWhatsApp) {
+   if (typeof floatingWhatsApp.showPopover === 'function') {
+      floatingWhatsApp.showPopover();
+   }
+
+   const isMobileViewport = window.matchMedia('(max-width: 780px)');
+   let collapseTimer;
+   const setWhatsAppExpanded = (isExpanded) => {
+      window.clearTimeout(collapseTimer);
+      collapseTimer = undefined;
+      floatingWhatsApp.classList.toggle('is-expanded', isExpanded);
+      floatingWhatsApp.setAttribute('aria-expanded', String(isExpanded));
+
+      if (isExpanded) {
+         collapseTimer = window.setTimeout(() => setWhatsAppExpanded(false), 5000);
+      }
+   };
+
+   floatingWhatsApp.setAttribute('aria-expanded', 'false');
+   floatingWhatsApp.addEventListener('click', (event) => {
+      if (!isMobileViewport.matches) return;
+
+      if (floatingWhatsApp.classList.contains('is-expanded')) {
+         window.clearTimeout(collapseTimer);
+         collapseTimer = undefined;
+         return;
+      }
+
+      event.preventDefault();
+      setWhatsAppExpanded(true);
+   });
+
+   document.addEventListener('click', (event) => {
+      if (isMobileViewport.matches && !floatingWhatsApp.contains(event.target)) {
+         setWhatsAppExpanded(false);
+      }
+   });
+
+   floatingWhatsApp.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && floatingWhatsApp.classList.contains('is-expanded')) {
+         setWhatsAppExpanded(false);
+      }
+   });
+
 }
 
 const header = document.querySelector('.header');
