@@ -1,0 +1,23 @@
+{
+  "name": "gadgetrunnermuo-website",
+  "version": "1.0.0",
+  "description": "Gadget Runner MUO - Pusat servis gadget di Muar, Johor",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amphua/gadgetrunnermuo-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amphua/gadgetrunnermuo-website/issues"
+  },
+  "homepage": "https://github.com/Amphua/gadgetrunnermuo-website#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
